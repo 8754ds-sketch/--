@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F⁺ FESTIVO - 主辦中心控制台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'festivo-black': '#050505',
+                        'festivo-dark': '#0D0D0D',
+                        'festivo-card': '#121212',
+                        'festivo-border': '#1A1A1A',
+                        'festivo-neon': '#D4FF37',
+                        'festivo-gray': '#A0A0A0'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #050505; color: #FFFFFF; font-family: sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-festivo-black text-white h-screen overflow-hidden flex text-xs">
+
+    <aside class="w-64 bg-festivo-dark border-r border-festivo-border flex flex-col justify-between p-6 shrink-0">
+        <div>
+            <div class="mb-10">
+                <div class="text-xl font-bold tracking-wider text-white">F<span class="text-festivo-neon">⁺</span> FESTIVO</div>
+                <div class="text-[10px] text-festivo-gray tracking-widest mt-1">主辦中心</div>
+            </div>
+
+            <nav class="space-y-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-festivo-card rounded-xl text-festivo-neon font-medium border border-festivo-border">
+                    <i class="fa-solid fa-chart-pie w-5"></i> 控制台概覽
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-calendar-days w-5"></i> 行程管理 (615)
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-wand-magic-sparkles w-5"></i> 引導式活動建立 (593)
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-ticket w-5"></i> 訂單與票券
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-qrcode w-5"></i> 報到核銷
+                </a>
+            </nav>
+        </div>
+
+        <div class="border-t border-festivo-border pt-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-festivo-border flex items-center justify-center border border-festivo-neon text-xs text-white">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">STICH 旅遊工作室</div>
+                    <div class="flex items-center gap-1 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-festivo-neon animate-pulse"></span>
+                        <span class="text-[10px] text-festivo-neon font-medium">已上架</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+        
+        <header class="h-16 border-b border-festivo-border px-8 flex items-center justify-between shrink-0 bg-festivo-black">
+            <div class="flex items-center gap-4 w-96">
+                <i class="fa-solid fa-bars text-festivo-gray cursor-pointer hover:text-white text-sm"></i>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-festivo-gray"></i>
+                    <input type="text" placeholder="搜尋訂單、旅客或行程..." class="w-full bg-festivo-card border border-festivo-border rounded-lg pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-festivo-neon text-white">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-bell text-festivo-gray hover:text-white text-sm"></i>
+                    <span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-festivo-neon rounded-full"></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-8 space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bg-festivo-card border border-festivo-border p-5 rounded-xl flex justify-between items-start">
+                    <div>
+                        <p class="text-festivo-gray">總營收額</p>
+                        <h3 class="text-2xl font-bold mt-2 text-white"><span class="text-xs font-normal text-festivo-gray mr-0.5">NT$</span>128,000</h3>
+                        <span class="text-[10px] text-festivo-neon bg-festivo-neon bg-opacity-10 px-2 py-0.5 rounded-full mt-2 inline-block">功能代碼 620</span>
+                    </div>
+                    <div class="bg-festivo-dark border border-festivo-border p-2 rounded-xl text-festivo-neon"><i class="fa-solid fa-chart-line"></i></div>
+                </div>
+                <div class="bg-festivo-card border border-festivo-border p-5 rounded-xl flex justify-between items-start">
+                    <div>
+                        <p class="text-festivo-gray">已售出總位</p>
+                        <h3 class="text-2xl font-bold mt-2 text-white">342 <span class="text-xs text-festivo-gray font-normal">位</span></h3>
+                        <span class="text-[10px] text-festivo-neon bg-festivo-neon bg-opacity-10 px-2 py-0.5 rounded-full mt-2 inline-block">數據監控正常 (618)</span>
+                    </div>
+                    <div class="bg-festivo-dark border border-festivo-border p-2 rounded-xl text-festivo-neon"><i class="fa-solid fa-ticket"></i></div>
+                </div>
+                <div class="bg-festivo-card border border-festivo-border p-5 rounded-xl flex justify-between items-start">
+                    <div>
+                        <p class="text-festivo-gray">進行中行程</p>
+                        <h3 class="text-2xl font-bold mt-2 text-[#D4FF37]">05 <span class="text-xs text-white font-normal">個行程</span></h3>
+                        <span class="text-[10px] text-festivo-gray bg-festivo-border px-2 py-0.5 rounded-full mt-2 inline-block">自主上架 (613)</span>
+                    </div>
+                    <div class="bg-festivo-dark border border-festivo-border p-2 rounded-xl text-festivo-neon"><i class="fa-solid fa-compass"></i></div>
+                </div>
+            </div>
+
+            <div class="bg-festivo-card border border-festivo-border rounded-xl overflow-hidden">
+                <div class="p-4 bg-festivo-dark border-b border-festivo-border">
+                    <span class="font-bold border-l-2 border-festivo-neon pl-2 text-white text-sm">主辦方活動行程與狀態管理列表 (613 / 615)</span>
+                </div>
+                
+                <table class="w-full text-left table-fixed">
+                    <thead class="bg-festivo-dark text-festivo-gray text-[10px] tracking-wider border-b border-festivo-border uppercase">
+                        <tr>
+                            <th class="p-4 w-1/3">行程活動名稱</th>
+                            <th class="p-4 w-1/6">出發日期</th>
+                            <th class="p-4 w-1/6">報名人數 (618)</th>
+                            <th class="p-4 w-1/6 text-center">上下架狀態切換 (614)</th>
+                            <th class="p-4 w-1/6 text-center">報名名單</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-festivo-border divide-opacity-40 text-white">
+                        <tr class="hover:bg-festivo-dark transition">
+                            <td class="p-4 font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis">霓虹雨：深夜電子祭與秘境溫泉之旅</td>
+                            <td class="p-4 text-festivo-gray whitespace-nowrap">2026-11-15</td>
+                            <td class="p-4">
+                                <div class="flex items-center justify-between mb-1 text-[10px] font-bold text-festivo-neon">
+                                    <span>20 / 50</span>
+                                    <span>40%</span>
+                                </div>
+                                <div class="w-full bg-black h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-festivo-neon h-full w-[40%]"></div>
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <div class="flex items-center justify-center gap-3">
+                                    <span class="text-[10px] text-festivo-neon font-medium">已上架</span>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer">
+                                        <div class="w-11 h-6 bg-red-900 rounded-full peer peer-checked:after:translate-x-full after:content-['X'] peer-checked:after:content-['V'] after:absolute after:top-0.5 after:left-[4px] after:bg-black after:text-white after:font-bold after:text-[10px] after:flex after:items-center after:justify-center after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-festivo-neon peer-checked:after:text-black"></div>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="p-4 text-center">
+                                <button class="bg-festivo-neon text-festivo-black font-bold px-5 py-1.5 rounded-lg hover:scale-105 transition shadow-sm whitespace-nowrap">
+                                    名單
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="p-5 border-t border-festivo-border bg-festivo-dark bg-opacity-30">
+                    <h4 class="text-[11px] font-bold text-festivo-gray tracking-wide mb-3 uppercase"><i class="fa-solid fa-list-ul mr-1 text-festivo-neon"></i> 最新活動動態</h4>
+                    <div class="space-y-2.5 text-[11px]">
+                        <div class="flex justify-between items-center text-white border-b border-festivo-border border-opacity-30 pb-2">
+                            <p class="truncate"><i class="fa-solid fa-bolt text-festivo-neon mr-2"></i> 林ＸＸ 剛剛預訂了行程：<span class="text-festivo-neon">霓虹雨：深夜電子祭...</span></p>
+                            <span class="text-festivo-gray shrink-0 ml-4">3分鐘前</span>
+                        </div>
+                        <div class="flex justify-between items-center text-white border-b border-festivo-border border-opacity-30 pb-2">
+                            <p class="truncate"><i class="fa-solid fa-circle-exclamation text-red-400 mr-2"></i> 陳ＸＸ 提交了阿里山森林之旅的退款申請</p>
+                            <span class="text-festivo-gray shrink-0 ml-4">15分鐘前</span>
+                        </div>
+                        <div class="flex justify-between items-center text-white">
+                            <p class="truncate"><i class="fa-solid fa-user-plus text-blue-400 mr-2"></i> 系統通知：新導遊 王大衛 已成功加入團隊</p>
+                            <span class="text-festivo-gray shrink-0 ml-4">1小時前</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-festivo-dark border-t border-festivo-border flex flex-col sm:flex-row justify-between items-center gap-3 text-festivo-gray text-[11px]">
+                    <span>顯示第 1 到 1 筆，共 1 筆行程</span>
+                    <div class="flex gap-1 items-center">
+                        <button class="px-3 py-1 bg-festivo-card border border-festivo-border rounded hover:text-white transition">上一頁</button>
+                        <button class="w-6 h-6 bg-festivo-neon text-festivo-black font-bold rounded flex items-center justify-center">1</button>
+                        <button class="px-3 py-1 bg-festivo-card border border-festivo-border rounded hover:text-white transition">下一頁</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
