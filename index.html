@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F⁺ FESTIVO - 主辦中心控制台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'festivo-black': '#050505',
+                        'festivo-dark': '#0D0D0D',
+                        'festivo-card': '#121212',
+                        'festivo-border': '#1A1A1A',
+                        'festivo-neon': '#D4FF37',
+                        'festivo-gray': '#A0A0A0'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #050505; color: #FFFFFF; font-family: sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-festivo-black text-white h-screen overflow-hidden flex text-xs">
+
+    <aside class="w-64 bg-festivo-dark border-r border-festivo-border flex flex-col justify-between p-6 shrink-0 h-full">
+        <div>
+            <div class="mb-10">
+                <div class="text-xl font-bold tracking-wider text-white">F<span class="text-festivo-neon">⁺</span> FESTIVO</div>
+                <div class="text-[10px] text-festivo-gray tracking-widest mt-1">主辦中心</div>
+            </div>
+
+            <nav class="space-y-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-festivo-card rounded-xl text-festivo-neon font-medium border border-festivo-border">
+                    <i class="fa-solid fa-chart-pie w-5"></i> 控制台概覽
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-calendar-days w-5"></i> 行程管理 
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-ticket w-5"></i> 訂單與票券
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-qrcode w-5"></i> 報到核銷
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-festivo-gray hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-wand-magic-sparkles w-5"></i> 活動建立 
+                </a>
+            </nav>
+        </div>
+
+        <div class="border-t border-festivo-border pt-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-festivo-border flex items-center justify-center border border-festivo-neon text-xs text-white">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white">STICH 旅遊工作室</div>
+                    <div class="flex items-center gap-1 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-festivo-neon animate-pulse"></span>
+                        <span class="text-[10px] text-festivo-neon font-medium">已上架</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col h-full min-w-0 bg-festivo-black">
+        
+        <header class="h-16 border-b border-festivo-border px-8 flex items-center justify-between shrink-0 bg-festivo-black">
+            <div class="flex items-center gap-4 w-96">
+                <i class="fa-solid fa-bars text-festivo-gray cursor-pointer hover:text-white text-sm"></i>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-festivo-gray"></i>
+                    <input type="text" placeholder="搜尋訂單、旅客或行程..." class="w-full bg-festivo-card border border-festivo-border rounded-lg pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-festivo-neon text-white">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-bell text-festivo-gray hover:text-white text-sm"></i>
+                    <span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-festivo-neon rounded-full"></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-8 flex flex-col justify-between gap-12">
+            
+            <div class="space-y-6 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="bg-festivo-card border border-festivo-border p-5 rounded-xl flex justify-between items-start">
+                        <div>
+                            <p class="text-festivo-gray">總營收額</p>
+                            <h3 class="text-2xl font-bold mt-2 text-white"><span class="text-xs font-normal text-festivo-gray mr-0.5">NT$</span>128,000</h3>
+                            <span class="text-[10px] text-festivo-neon bg-festivo-neon bg-opacity-10 px-2 py-0.5 rounded-full mt-2 inline-block">功能代碼 620</span>
+                        </div>
+                        <div class="bg-festivo-dark border border-festivo-border p-2 rounded-xl text-festivo-neon"><i class="fa-solid fa-chart-line"></i></div>
+                    </div>
+                    <div class="bg-festivo-card border border-festivo-border p-5 rounded-xl flex justify-between items-start">
+                        <div>
+                            <p class="text-festivo-gray">已售出總位</p>
+                            <h3 class="text-2xl font-bold mt-2 text-white">342 <span class="text-xs text-festivo-gray font-normal">位</span></h3>
+                            <span class="text-[10px] text-festivo-neon bg-festivo-neon bg-opacity-10 px-2 py-0.5 rounded-full mt-2 inline-block">數據監控正常 (618)</span>
+                        </div>
+                        <div class="bg-festivo-dark border border-festivo-border p-2 rounded-xl text-festivo-neon"><i class="fa-solid fa-ticket"></i></div>
+                    </div>
+                    <div class="bg-festivo-card border border-festivo-border p-5 rounded-xl flex justify-between items-start">
+                        <div>
+                            <p class="text-festivo-gray">進行中行程</p>
+                            <h3 class="text-2xl font-bold mt-2 text-[#D4FF37]">05 <span class="text-xs text-white font-normal">個行程</span></h3>
+                            <span class="text-[10px] text-festivo-gray bg-festivo-border px-2 py-0.5 rounded-full mt-2 inline-block">自主上架 (613)</span>
+                        </div>
+                        <div class="bg-festivo-dark border border-festivo-border p-2 rounded-xl text-festivo-neon"><i class="fa-solid fa-compass"></i></div>
+                    </div>
+                </div>
+
+                <div class="bg-festivo-card border border-festivo-border rounded-xl overflow-hidden">
+                    <div class="p-4 bg-festivo-dark border-b border-festivo-border">
+                        <span class="font-bold border-l-2 border-festivo-neon pl-2 text-white text-sm">主辦方活動行程與狀態管理列表 (613 / 615)</span>
+                    </div>
+                    
+                    <div class="overflow-x-auto w-full">
+                        <table class="w-full text-left table-auto min-w-[700px]">
+                            <thead class="bg-festivo-dark text-festivo-gray text-[10px] tracking-wider border-b border-festivo-border uppercase select-none">
+                                <tr>
+                                    <th class="p-4">活動名稱</th>
+                                    <th class="p-4 w-36 cursor-pointer hover:text-white transition-colors" onclick="toggleSort('date')">
+                                        <div class="flex items-center gap-1.5">
+                                            <span>活動日期</span>
+                                            <i id="dateSortIcon" class="fa-solid fa-arrow-up-short-wide text-festivo-neon text-[11px]"></i>
+                                        </div>
+                                    </th>
+                                    <th class="p-4 w-44 cursor-pointer hover:text-white transition-colors" onclick="toggleSort('registration')">
+                                        <div class="flex items-center gap-1.5">
+                                            <span>報名人數 (618)</span>
+                                            <i id="regSortIcon" class="fa-solid fa-arrows-up-down text-neutral-600 text-[9px]"></i>
+                                        </div>
+                                    </th>
+                                    <th class="p-4 w-48 text-center">
+                                        <div class="flex items-center justify-center gap-1.5">
+                                            <span class="text-festivo-gray">狀態篩選</span>
+                                            <select id="statusFilter" onchange="filterStatus()" class="bg-festivo-card border border-festivo-border text-neutral-300 text-[10px] px-2 py-0.5 rounded focus:outline-none focus:border-festivo-neon cursor-pointer font-medium">
+                                                <option value="all">顯示全部 (614)</option>
+                                                <option value="active">上架中</option>
+                                                <option value="inactive">已下架</option>
+                                            </select>
+                                        </div>
+                                    </th>
+                                    <th class="p-4 w-28 text-center">報名名單</th>
+                                </tr>
+                            </thead>
+                            <tbody id="activityTableBody" class="divide-y divide-festivo-border divide-opacity-40 text-white">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="p-4 bg-festivo-dark border-t border-festivo-border flex flex-col sm:flex-row justify-between items-center gap-4 text-neutral-400 text-[11px] select-none">
+                        <span id="pageInfo">顯示第 1 到 5 筆，共 12 筆活動</span>
+                        <div class="flex items-center gap-5 font-medium tracking-wide">
+                            <button id="actPrevBtn" onclick="changeActPage(currentActPage - 1)" class="flex items-center gap-1.5 hover:text-white transition group">
+                                <i class="fa-solid fa-chevron-left text-[9px]"></i> <span>上一頁</span>
+                            </button>
+                            <div id="actPaginationNums" class="flex items-center gap-1">
+                                </div>
+                            <button id="actNextBtn" onclick="changeActPage(currentActPage + 1)" class="flex items-center gap-1.5 hover:text-white transition">
+                                <span>下一頁</span> <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-festivo-card border border-festivo-border rounded-xl overflow-hidden">
+                    <div class="p-4 bg-festivo-dark border-b border-festivo-border">
+                        <h4 class="text-sm font-bold text-white border-l-2 border-festivo-neon pl-2 uppercase"><i class="fa-solid fa-list-ul mr-1 text-festivo-neon"></i> 最新活動動態</h4>
+                    </div>
+                    
+                    <div id="feedContainer" class="p-5 bg-festivo-dark bg-opacity-30 space-y-2.5 text-[11px]">
+                        </div>
+
+                    <div class="p-4 bg-festivo-dark border-t border-festivo-border flex flex-col sm:flex-row justify-between items-center gap-4 text-neutral-400 text-[11px] select-none">
+                        <span id="feedPageInfo">顯示最新動態第 1 到 5 筆，共 13 筆記錄</span>
+                        
+                        <div class="flex items-center gap-5 font-medium tracking-wide">
+                            <button id="feedPrevBtn" onclick="changeFeedPage(currentFeedPage - 1)" class="flex items-center gap-1.5 hover:text-white transition group">
+                                <i class="fa-solid fa-chevron-left text-[9px]"></i> <span>上一頁</span>
+                            </button>
+                            <div id="feedPaginationNums" class="flex items-center gap-1">
+                                </div>
+                            <button id="feedNextBtn" onclick="changeFeedPage(currentFeedPage + 1)" class="flex items-center gap-1.5 hover:text-white transition">
+                                <span>下一頁</span> <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="w-full pt-4 border-t border-festivo-border flex flex-col sm:flex-row justify-between items-center gap-3 text-neutral-400 text-[10px] tracking-wider uppercase font-mono shrink-0">
+                <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                    <span class="text-neutral-300">&copy; 2026 F⁺ FESTIVO 主辦中心. 版權所有.</span>
+                    <span class="hidden sm:inline text-festivo-border">|</span>
+                    <span class="text-[9px] text-neutral-400"><i class="fa-solid fa-lock mr-1 text-festivo-neon"></i> 加密雲端環境</span>
+                </div>
+                <div class="flex gap-5">
+                    <a href="#" class="hover:text-white transition-colors duration-200">說明中心</a>
+                    <a href="#" class="hover:text-white transition-colors duration-200">隱私權協議</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // =========================================================================
+        // [區塊一] 活動列表數據庫（12筆，剛好分 5 + 5 + 2 三頁）
+        // =========================================================================
+        let activities = [
+            // 第一頁預期展示 (1-5)
+            { id: "EV-77312-VRX", name: "霓虹雨：深夜電子祭與秘境溫泉之旅", date: "2026-11-15", currentReg: 20, maxReg: 50, percent: 40, active: true },
+            { id: "EV-88421-ISL", name: "極光之境：冰島冬季攝影巡迴展", date: "2026-12-01", currentReg: 45, maxReg: 45, percent: 100, active: true },
+            { id: "EV-11029-HUA", name: "山海微醺：花東海岸私廚音樂晚宴", date: "2026-12-10", currentReg: 0, maxReg: 30, percent: 0, active: false },
+            { id: "EV-55243-TPE", name: "地下重音：台北工業風獨立電音派對", date: "2026-12-24", currentReg: 75, maxReg: 100, percent: 75, active: true },
+            { id: "EV-99310-TEC", name: "未來科技論壇：AI與Web3的跨界對話", date: "2027-01-10", currentReg: 12, maxReg: 80, percent: 15, active: true },
+            // 第二頁預期展示 (6-10)
+            { id: "EV-22345-KSH", name: "大港星潮：高雄港灣不插電原創音樂祭", date: "2027-02-05", currentReg: 150, maxReg: 200, percent: 75, active: true },
+            { id: "EV-33456-NTC", name: "森林瑜珈：九份秘境茶禪與靈性洗禮", date: "2027-02-20", currentReg: 25, maxReg: 25, percent: 100, active: true },
+            { id: "EV-44567-TAI", name: "尋味古都：台南老街深夜私廚散策", date: "2027-03-03", currentReg: 8, maxReg: 15, percent: 53, active: true },
+            { id: "EV-55678-CHY", name: "日出茶金：阿里山雲海茶園音樂饗宴", date: "2027-03-18", currentReg: 0, maxReg: 40, percent: 0, active: false },
+            { id: "EV-66789-HUN", name: "黑潮冒險：花蓮清水斷崖極限獨木舟", date: "2027-04-01", currentReg: 12, maxReg: 50, percent: 24, active: true },
+            // 第三頁預期展示 (11-12 只剩兩筆活動)
+            { id: "EV-77890-TTN", name: "台東縱谷：熱氣球微醺奢華露營雙年展", date: "2027-05-15", currentReg: 38, maxReg: 40, percent: 95, active: true },
+            { id: "EV-88901-PEN", name: "絕美澎湖：夜划SUP藍眼淚秘境浮潛之旅", date: "2027-06-20", currentReg: 5, maxReg: 20, percent: 25, active: true }
+        ];
+
+        let currentStatus = "all";
+        let dateSortDirection = "asc";   
+        let regSortDirection = "none";   
+        let primarySort = "date";        
+        
+        let currentActPage = 1;
+        const actPageSize = 5; // 每頁 5 筆
+
+        function renderTable() {
+            const tbody = document.getElementById("activityTableBody");
+            
+            // 1. 執行過濾篩選
+            let filteredData = activities.filter(act => {
+                if (currentStatus === "active") return act.active;
+                if (currentStatus === "inactive") return !act.active;
+                return true;
+            });
+
+            // 2. 執行雙重排序
+            filteredData.sort((a, b) => {
+                let primaryResult = 0, secondaryResult = 0;
+                let dateA = new Date(a.date), dateB = new Date(b.date);
+                let dateCompare = dateSortDirection === "asc" ? dateA - dateB : dateB - dateA;
+                let regCompare = regSortDirection === "desc" ? b.percent - a.percent : a.percent - b.percent;
+
+                if (primarySort === "date") { primaryResult = dateCompare; secondaryResult = regCompare; } 
+                else { primaryResult = regCompare; secondaryResult = dateCompare; }
+                return primaryResult !== 0 ? primaryResult : secondaryResult;
+            });
+
+            // 3. 計算並裁切活動分頁資料范围
+            const totalPages = Math.ceil(filteredData.length / actPageSize) || 1;
+            if (currentActPage > totalPages) currentActPage = totalPages; // 防止因篩選導致頁數溢出
+
+            let start = (currentActPage - 1) * actPageSize;
+            let end = start + actPageSize;
+            let pageItems = filteredData.slice(start, end);
+
+            // 4. 將當前頁的活動塞入 HTML
+            tbody.innerHTML = pageItems.map(act => `
+                <tr class="hover:bg-festivo-dark transition">
+                    <td class="p-4 font-semibold text-white max-w-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-neutral-800 border border-festivo-border flex items-center justify-center shrink-0 text-neutral-500 overflow-hidden">
+                                <i class="fa-solid fa-image text-sm"></i>
+                            </div>
+                            <div class="truncate">
+                                <span class="block text-white">${act.name}</span>
+                                <span class="block text-[10px] text-festivo-gray font-normal mt-0.5 font-mono">ID: ${act.id}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-4 text-festivo-gray whitespace-nowrap font-mono text-[11px]">${act.date}</td>
+                    <td class="p-4">
+                        <div class="flex items-center justify-between mb-1 text-[10px] font-bold ${act.percent > 0 ? 'text-festivo-neon' : 'text-festivo-gray'}">
+                            <span>${act.currentReg} / ${act.maxReg}</span>
+                            <span>${act.percent}%</span>
+                        </div>
+                        <div class="w-full bg-black h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-festivo-neon h-full" style="width: ${act.percent}%"></div>
+                        </div>
+                    </td>
+                    <td class="p-4">
+                        <div class="flex items-center justify-center gap-3">
+                            <span id="statusText-${act.id}" class="text-[10px] font-medium w-10 text-right ${act.active ? 'text-festivo-neon' : 'text-neutral-500'}">${act.active ? '已上架' : '已下架'}</span>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" ${act.active ? 'checked' : ''} onchange="toggleActiveState('${act.id}', this)" class="sr-only peer">
+                                <div class="w-11 h-6 bg-red-950 rounded-full peer peer-checked:after:translate-x-full after:content-['X'] peer-checked:after:content-['V'] after:absolute after:top-0.5 after:left-[4px] after:bg-black after:text-white after:font-bold after:text-[10px] after:flex after:items-center after:justify-center after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-festivo-neon peer-checked:after:text-black"></div>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="p-4 text-center">
+                        <button class="bg-festivo-neon text-festivo-black font-bold px-5 py-1.5 rounded-lg hover:scale-105 transition shadow-sm whitespace-nowrap">名單</button>
+                    </td>
+                </tr>
+            `).join('');
+
+            // 更新左下角頁碼筆數提示
+            document.getElementById("pageInfo").innerText = `顯示第 ${filteredData.length ? start + 1 : 0} 到 ${Math.min(end, filteredData.length)} 筆，共 ${filteredData.length} 筆活動`;
+
+            // 5. 動態渲染生成活動列表 01, 02, 03 按鈕
+            const numContainer = document.getElementById("actPaginationNums");
+            numContainer.innerHTML = "";
+            for (let i = 1; i <= totalPages; i++) {
+                let isCurrent = (i === currentActPage);
+                let btnStr = i < 10 ? `0${i}` : i;
+                numContainer.innerHTML += `
+                    <button onclick="changeActPage(${i})" class="w-6 h-6 flex items-center justify-center font-mono text-[11px] transition ${isCurrent ? 'border border-festivo-neon text-festivo-neon font-bold' : 'text-neutral-500 hover:text-white'}">
+                        ${btnStr}
+                    </button>
+                `;
+            }
+
+            // 控制上一頁/下一頁按鈕外觀與禁用
+            const prevBtn = document.getElementById("actPrevBtn");
+            const nextBtn = document.getElementById("actNextBtn");
+            
+            prevBtn.disabled = (currentActPage === 1);
+            prevBtn.className = currentActPage === 1 ? "flex items-center gap-1.5 text-neutral-600 cursor-not-allowed" : "flex items-center gap-1.5 text-neutral-400 hover:text-white transition cursor-pointer";
+            
+            nextBtn.disabled = (currentActPage === totalPages);
+            nextBtn.className = currentActPage === totalPages ? "flex items-center gap-1.5 text-neutral-600 cursor-not-allowed" : "flex items-center gap-1.5 text-neutral-300 hover:text-white transition cursor-pointer";
+
+            updateIcons();
+        }
+
+        function changeActPage(newPage) {
+            let filteredCount = activities.filter(act => {
+                if (currentStatus === "active") return act.active;
+                if (currentStatus === "inactive") return !act.active;
+                return true;
+            }).length;
+            const totalPages = Math.ceil(filteredCount / actPageSize) || 1;
+            if (newPage < 1 || newPage > totalPages) return;
+            currentActPage = newPage;
+            renderTable();
+        }
+
+        function toggleSort(type) {
+            primarySort = type;
+            if (type === "date") { dateSortDirection = dateSortDirection === "asc" ? "desc" : "asc"; } 
+            else { regSortDirection = regSortDirection === "none" || regSortDirection === "asc" ? "desc" : "asc"; }
+            renderTable();
+        }
+
+        function updateIcons() {
+            const dateIcon = document.getElementById("dateSortIcon"), regIcon = document.getElementById("regSortIcon");
+            dateIcon.className = dateSortDirection === "asc" ? "fa-solid fa-arrow-up-short-wide text-festivo-neon text-[11px]" : "fa-solid fa-arrow-down-wide-short text-festivo-neon text-[11px]";
+            if (regSortDirection === "none") regIcon.className = "fa-solid fa-arrows-up-down text-neutral-600 text-[9px]";
+            else regIcon.className = regSortDirection === "desc" ? "fa-solid fa-arrow-down-wide-short text-festivo-neon text-[11px]" : "fa-solid fa-arrow-up-short-wide text-festivo-neon text-[11px]";
+        }
+
+        function filterStatus() { currentStatus = document.getElementById("statusFilter").value; currentActPage = 1; renderTable(); }
+
+        function toggleActiveState(id, checkbox) {
+            let act = activities.find(a => a.id === id);
+            if (act) {
+                act.active = checkbox.checked;
+                const txtLabel = document.getElementById(`statusText-${id}`);
+                txtLabel.innerText = checkbox.checked ? "已上架" : "已下架";
+                txtLabel.className = checkbox.checked ? "text-[10px] font-medium w-10 text-right text-festivo-neon" : "text-[10px] font-medium w-10 text-right text-neutral-500";
+                if (currentStatus !== "all") { setTimeout(() => { renderTable(); }, 250); }
+            }
+        }
+
+        // =========================================================================
+        // [區塊二] 最新動態數據庫與處理
+        // =========================================================================
+        let feedData = [
+            { type: "bolt", text: "林ＸＸ 剛剛預訂了行程：<span class='text-festivo-neon'>霓虹雨：深夜電子祭...</span>", time: "3分鐘前" },
+            { type: "error", text: "陳ＸＸ 提交了阿里山森林之旅的退款申請", time: "15分鐘前" },
+            { type: "user", text: "系統通知：新導遊 王大衛 已成功加入團隊", time: "1小時前" },
+            { type: "bolt", text: "張ＸＸ 剛剛預訂了行程：<span class='text-festivo-neon'>極光之境：冰島冬季攝影...</span>", time: "2小時前" },
+            { type: "bolt", text: "李ＸＸ 剛剛預訂了行程：<span class='text-festivo-neon'>地下重音：台北工業風派對...</span>", time: "3小時前" },
+            { type: "user", text: "系統通知： STICH 旅遊工作室 已成功更新商標照片", time: "5小時前" },
+            { type: "error", text: "黃ＸＸ 取消了未來科技論壇的報名訂單", time: "8小時前" },
+            { type: "bolt", text: "趙ＸＸ 剛剛預訂了行程：<span class='text-festivo-neon'>山海微醺：花東海岸私廚...</span>", time: "12小時前" },
+            { type: "bolt", text: "孫ＸＸ 剛剛預訂了行程：<span class='text-festivo-neon'>霓虹雨：深夜電子祭...</span>", time: "16小時前" },
+            { type: "user", text: "系統通知：您的活動【極光之境】門票已全數售罄！", time: "1天前" },
+            { type: "bolt", text: "錢ＸＸ 剛剛預訂了行程：<span class='text-festivo-neon'>未來科技論壇：AI與Web3...</span>", time: "2天前" },
+            { type: "error", text: "周ＸＸ 提交了深夜電子祭的更換場次申請", time: "2天前" },
+            { type: "user", text: "系統通知：主辦中心通過了安全環境加密驗證", time: "3天前" }
+        ];
+
+        let currentFeedPage = 1; 
+        const feedPageSize = 5;  
+
+        function renderFeed() {
+            const container = document.getElementById("feedContainer");
+            const totalPages = Math.ceil(feedData.length / feedPageSize); 
+            
+            let start = (currentFeedPage - 1) * feedPageSize;
+            let end = start + feedPageSize;
+            let pageItems = feedData.slice(start, end);
+
+            container.innerHTML = pageItems.map(item => {
+                let icon = '<i class="fa-solid fa-bolt text-festivo-neon mr-2"></i>';
+                if (item.type === "error") icon = '<i class="fa-solid fa-circle-exclamation text-red-400 mr-2"></i>';
+                if (item.type === "user") icon = '<i class="fa-solid fa-user-plus text-blue-400 mr-2"></i>';
+                return `<div class="flex justify-between items-center text-white border-b border-festivo-border border-opacity-30 pb-2"><p class="truncate">${icon}${item.text}</p><span class="text-festivo-gray shrink-0 ml-4">${item.time}</span></div>`;
+            }).join('');
+
+            document.getElementById("feedPageInfo").innerText = `顯示最新動態第 ${start + 1} 到 ${Math.min(end, feedData.length)} 筆，共 ${feedData.length} 筆記錄`;
+
+            const numContainer = document.getElementById("feedPaginationNums");
+            numContainer.innerHTML = "";
+            for (let i = 1; i <= totalPages; i++) {
+                let isCurrent = (i === currentFeedPage);
+                let btnStr = i < 10 ? `0${i}` : i;
+                numContainer.innerHTML += `<button onclick="changeFeedPage(${i})" class="w-6 h-6 flex items-center justify-center font-mono text-[11px] transition ${isCurrent ? 'border border-festivo-neon text-festivo-neon font-bold' : 'text-neutral-500 hover:text-white'}">${btnStr}</button>`;
+            }
+
+            const prevBtn = document.getElementById("feedPrevBtn"), nextBtn = document.getElementById("feedNextBtn");
+            prevBtn.disabled = (currentFeedPage === 1);
+            prevBtn.className = currentFeedPage === 1 ? "flex items-center gap-1.5 text-neutral-600 cursor-not-allowed" : "flex items-center gap-1.5 text-neutral-400 hover:text-white transition cursor-pointer";
+            nextBtn.disabled = (currentFeedPage === totalPages);
+            nextBtn.className = currentFeedPage === totalPages ? "flex items-center gap-1.5 text-neutral-600 cursor-not-allowed" : "flex items-center gap-1.5 text-neutral-300 hover:text-white transition cursor-pointer";
+        }
+
+        function changeFeedPage(newPage) {
+            const totalPages = Math.ceil(feedData.length / feedPageSize);
+            if (newPage < 1 || newPage > totalPages) return;
+            currentFeedPage = newPage;
+            renderFeed();
+        }
+
+        window.onload = function() {
+            renderTable();
+            renderFeed();
+        };
+    </script>
+</body>
+</html>
